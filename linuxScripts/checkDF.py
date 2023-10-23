@@ -24,7 +24,6 @@ if disk_space_usage is not None:
         sys.exit(0)
     elif 50 <= disk_space_usage <= 75:
         print("Warn: {} disk space is {}%, Starting to fill up Disk".format(sys.argv[1],str(disk_space_usage)))
-        print(sys.argv[0])
         sys.exit(1)
     else:
         print("Error: {} disk space is {}%, Almost out of space on Disk".format(sys.argv[1],str(disk_space_usage)))
