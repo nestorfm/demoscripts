@@ -18,7 +18,7 @@ cpu_usage = get_cpu_usage()
 
 if cpu_usage is not None:
     if cpu_usage < 60:
-        print("Success: {} within normal usage range {}% CPU".format(sys.argv[1],str(cpu_usage)))
+        print("Success: {} within normal usage range {}% CPU".format(sys.argv[0],str(cpu_usage)))
         sys.exit(0)
     elif 60 <= cpu_usage <= 75:
         print("Warning: {} above normal usage range {}% CPU".format(sys.argv[1],str(cpu_usage)))
