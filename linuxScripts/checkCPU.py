@@ -18,14 +18,14 @@ cpu_usage = get_cpu_usage()
 
 if cpu_usage is not None:
     if cpu_usage < 60:
-        print("Success: {} within normal usage range {}% CPU".format(sys.argv[1],str(cpu_usage)))
+        print("Success: Script {}: within normal usage range {}% CPU".format(sys.argv[2],str(cpu_usage)))
         sys.exit(0)
     elif 60 <= cpu_usage <= 75:
-        print("Warning: {} above normal usage range {}% CPU".format(sys.argv[1],str(cpu_usage)))
+        print("Warning: Script {}: above normal usage range {}% CPU".format(sys.argv[2],str(cpu_usage)))
         sys.exit(1)
     else:
-        print("Error: {} is {}% high and almost out of CPU".format(sys.argv[1],str(cpu_usage)))
-        sys.exit(1)
+        print("Error: Script {}: is {}% high and almost out of CPU".format(sys.argv[2],str(cpu_usage)))
+        sys.exit(2)
 else:
-    print("Error: Failed to retrieve usage on {} CPU".format(sys.argv[1],str(cpu_usage)))
-    sys.exit(1)
+    print("Error: Script {}: Failed to retrieve usage for CPU".format(sys.argv[2]))
+    sys.exit(3)

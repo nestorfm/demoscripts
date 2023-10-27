@@ -20,14 +20,14 @@ disk_space_usage = get_disk_space_usage()
 
 if disk_space_usage is not None:
     if disk_space_usage < 50:
-        print("Success: {} disk space is {}%, Normal usage on Disk".format(sys.argv[1],str(disk_space_usage)))
+        print("Success: Script {}: disk space is {}%, Normal usage on Disk".format(sys.argv[2],str(disk_space_usage)))
         sys.exit(0)
     elif 50 <= disk_space_usage <= 75:
-        print("Warn: {} disk space is {}%, Starting to fill up Disk".format(sys.argv[1],str(disk_space_usage)))
+        print("Warning: Script {}: disk space is {}%, Starting to fill up Disk".format(sys.argv[2],str(disk_space_usage)))
         sys.exit(1)
     else:
-        print("Error: {} disk space is {}%, Almost out of space on Disk".format(sys.argv[1],str(disk_space_usage)))
+        print("Error: Script {}: disk space is {}%, Almost out of space on Disk".format(sys.argv[2],str(disk_space_usage)))
         sys.exit(2)
 else:
-    print("Error: Failed to retrieve {} space usage on Disk".format(sys.argv[1]))
+    print("Error: Script {}: Failed to retrieve space usage on Disk".format(sys.argv[2]))
     sys.exit(3)
